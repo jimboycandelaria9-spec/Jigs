@@ -1,165 +1,92 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shop smartphones at Pocket Phone Shop.">
-  <title>Pocket | Phone Shop</title>
+  <meta name="description" content="Browse smartphones at Pocket Phone Shop. Find your next phone at a great price.">
+  <title>Pocket — Phone Shop</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-
-  <div class="announcement">
-    Free shipping on orders over ₱15,000
-  </div>
-
+  <div class="announcement">Free shipping on orders over ₱15,000 · Easy and secure shopping</div>
   <header class="site-header">
-    <a class="brand" href="#">POCKET<span>.</span></a>
-
-    <nav>
-      <a href="#shop">Shop Phones</a>
-      <a href="#about">About Us</a>
+    <a class="brand" href="#" aria-label="Pocket home"><span class="brand-mark">P</span> pocket<span class="brand-dot">.</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#shop">Shop phones</a>
+      <a href="#why-us">Why Pocket?</a>
       <a href="#contact">Contact</a>
     </nav>
-
-    <button class="cart-button" id="cartButton">
-      🛒 Cart (<span id="cartCount">0</span>)
+    <button class="cart-button" id="cartButton" aria-label="View shopping cart">
+      <span aria-hidden="true">♧</span> Cart <span class="cart-count" id="cartCount">0</span>
     </button>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">YOUR NEXT PHONE IS HERE</p>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEXT PHONE IS HERE</p>
         <h1>Good phones.<br><span>Better choices.</span></h1>
-
-        <p>
-          Discover your next smartphone at Pocket.
-          Find great features, stylish designs, and prices you'll love.
-        </p>
-
-        <a href="#shop" class="primary-button">Explore Phones →</a>
-      </div>
-
-      <div class="hero-phone" aria-label="Smartphone illustration">
-        <div class="phone-shape">
-          <div class="camera"></div>
-          <div class="camera second-camera"></div>
-          <div class="phone-screen">
-            <span>09:41</span>
-            <h2>Make every day brighter.</h2>
-          </div>
+        <p class="hero-description">Find a phone that fits your life. Explore reliable favorites, fresh features, and prices you'll love.</p>
+        <a class="primary-button" href="#shop">Explore phones <span aria-hidden="true">↗</span></a>
+        <div class="hero-notes">
+          <div><strong>100%</strong><span>Genuine devices</span></div>
+          <div><strong>Easy</strong><span>Shopping experience</span></div>
+          <div><strong>Helpful</strong><span>Customer support</span></div>
         </div>
+      </div>
+      <div class="hero-art" aria-label="Decorative smartphone illustration">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="floating-tag tag-top">NEW ARRIVALS <span>✦</span></div>
+        <div class="phone phone-back"><div class="camera camera-one"></div><div class="camera camera-two"></div><div class="camera camera-three"></div></div>
+        <div class="phone phone-front"><div class="phone-speaker"></div><div class="screen-glow"></div><div class="screen-time">09:41</div><div class="screen-caption">Make<br>every day<br><b>brighter.</b></div><div class="screen-pill"></div></div>
+        <div class="floating-tag tag-bottom">FIND YOUR <b>FAVORITE</b> ↗</div>
+        <span class="spark spark-one">✳</span><span class="spark spark-two">✦</span>
       </div>
     </section>
 
     <section class="shop-section" id="shop">
-      <p class="eyebrow">THE POCKET COLLECTION</p>
-      <h2>Find your next favorite.</h2>
-      <p class="section-description">
-        Explore our selection of popular smartphones.
-      </p>
-
+      <div class="section-heading">
+        <div><p class="eyebrow">THE POCKET COLLECTION</p><h2>Find your next favorite.</h2></div>
+        <p class="section-subtitle">Great features, carefully picked.</p>
+      </div>
       <div class="shop-tools">
-        <div class="filters">
-          <button class="filter active" data-category="all">All Phones</button>
+        <div class="filters" role="group" aria-label="Filter phones">
+          <button class="filter active" data-category="all">All phones</button>
           <button class="filter" data-category="apple">Apple</button>
           <button class="filter" data-category="samsung">Samsung</button>
           <button class="filter" data-category="android">Other Android</button>
         </div>
-
-        <input
-          id="searchInput"
-          type="search"
-          placeholder="Search phones..."
-          aria-label="Search phones"
-        >
+        <label class="search-box"><span aria-hidden="true">⌕</span><input type="search" id="searchInput" placeholder="Search phones..." aria-label="Search phones"></label>
       </div>
-
-      <div class="product-grid" id="productGrid"></div>
-
-      <p class="demo-note">
-        Prices are examples. Please confirm product availability and prices before purchasing.
-      </p>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <p class="demo-note">Demo catalog: product names and prices are examples. Contact the shop to confirm current availability and pricing.</p>
     </section>
 
-    <section class="about-section" id="about">
-      <p class="eyebrow">WHY SHOP WITH US?</p>
-      <h2>Your next phone, made simple.</h2>
-
-      <div class="benefits">
-        <article>
-          <div class="benefit-icon">✓</div>
-          <h3>Quality Choices</h3>
-          <p>Explore a selection of popular phone models.</p>
-        </article>
-
-        <article>
-          <div class="benefit-icon">♡</div>
-          <h3>Friendly Support</h3>
-          <p>Contact us if you need help choosing a phone.</p>
-        </article>
-
-        <article>
-          <div class="benefit-icon">↗</div>
-          <h3>Easy Shopping</h3>
-          <p>Collect your favorite phones in one cart.</p>
-        </article>
+    <section class="why-section" id="why-us">
+      <div><p class="eyebrow">SHOP WITH CONFIDENCE</p><h2>A better way to<br>find your phone.</h2></div>
+      <div class="benefit-list">
+        <article class="benefit"><span class="benefit-icon">✓</span><div><h3>Carefully selected</h3><p>Explore popular models in one simple place.</p></div></article>
+        <article class="benefit"><span class="benefit-icon">♡</span><div><h3>Help when you need it</h3><p>Reach out with questions before you buy.</p></div></article>
+        <article class="benefit"><span class="benefit-icon">↗</span><div><h3>Simple shopping</h3><p>Add favorites to your cart and review your list.</p></div></article>
       </div>
     </section>
 
     <section class="contact-section" id="contact">
-      <div>
-        <p class="eyebrow">NEED HELP?</p>
-        <h2>Let's find your phone.</h2>
-        <p>Have a question? We'd love to hear from you.</p>
-      </div>
-
-      <a
-        class="primary-button"
-        href="mailto:YOUR-EMAIL@example.com?subject=Phone%20Shop%20Inquiry"
-      >
-        Contact Us →
-      </a>
+      <div><p class="eyebrow">NEED A HAND?</p><h2>Let's find the right phone.</h2><p>Have a question about a model? Get in touch with our team.</p></div>
+      <a class="primary-button" id="contactButton" href="mailto:hello@pocket.example?subject=Phone%20shop%20inquiry">Contact the shop <span aria-hidden="true">↗</span></a>
     </section>
   </main>
 
-  <footer>
-    <a class="brand" href="#">POCKET<span>.</span></a>
-    <p>Find a phone you'll love.</p>
-    <p>© <span id="year"></span> Pocket Phone Shop</p>
-  </footer>
+  <footer class="site-footer"><a class="brand footer-brand" href="#"><span class="brand-mark">P</span> pocket<span class="brand-dot">.</span></a><p>Find a phone you'll love.</p><span>© <span id="year"></span> Pocket Phone Shop</span></footer>
 
-  <dialog id="cartDialog">
-    <div class="cart-heading">
-      <h2>Your Cart</h2>
-      <button id="closeCart" aria-label="Close cart">✕</button>
-    </div>
-
-    <div id="cartItems"></div>
-
-    <div class="cart-total">
-      <span>Estimated Total</span>
-      <strong id="cartTotal">₱0</strong>
-    </div>
-
-    <p class="demo-note">
-      Demo cart only. No online payment is processed.
-    </p>
-
-    <a
-      id="checkoutButton"
-      class="primary-button checkout-button"
-      href="mailto:YOUR-EMAIL@example.com?subject=Phone%20Order"
-    >
-      Ask About Your Order →
-    </a>
+  <dialog class="cart-dialog" id="cartDialog">
+    <div class="dialog-header"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your cart</h2></div><button class="close-dialog" id="closeCart" aria-label="Close cart">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-total"><span>Estimated total</span><strong id="cartTotal">₱0</strong></div>
+    <p class="cart-disclaimer">Demo cart only. No payment is processed on this website.</p>
+    <a class="primary-button checkout-button" id="checkoutButton" href="mailto:hello@pocket.example?subject=Phone%20order%20inquiry">Ask about your order <span>↗</span></a>
   </dialog>
-
-  <div class="toast" id="toast" role="status"></div>
-
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
-```
